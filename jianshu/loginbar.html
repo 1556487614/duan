@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="formValidation">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>简书</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" media="screen" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/loginbar.css" />
+		<script type="text/javascript">
+			document.getElementsByTagName("html")[0].style.fontSize = innerWidth / 16 + "px";
+		</script>
+		<script>
+			var formValidation = angular.module('FormValidation', []);
+			formValidation.controller('myform', function($scope) {
+				$scope.user = {
+					name: '',
+					pass: ''
+				};
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="header">
+			<h3>登录简书</h3>
+			<a href="index.html"><img src="img/icon-6.png" /></a>
+		</div>
+		<form class="regsiter" name="regsiter" ng-controller="myform">
+			<!--<h3 ng-show="message">{{message}}</h3><br />-->
+			<div class="loginbar">
+				<img src="img/icon-7.png" />
+				<span>
+					<input type="email" placeholder="邮箱" ng-model="user.email" required/>
+				</span>
+			</div>
+			<div class="loginbar">
+				<img src="img/icon-8.png" />
+				<span>
+					<input type="number" placeholder="密码" ng-model="user.password" required ng-minlength="6"/>
+				</span>
+			</div>
+			
+			<button class="btn" id="btn" ng-disabled="!regsiter.$valid" ng-click="addUser()">登录</button>
+		</form>
+		<div class="msg">
+			<h6>社交账号直接登录</h6>
+		</div>
+		<div class="icon">
+			<span class="qq">
+				<img src="img/icon-10.png"/>
+			</span>
+			<span class="wb">
+				<img src="img/icon-11.png"/>
+			</span>
+			<span class="db">
+				<img src="img/icon-12.png"/>
+			</span>
+		</div>
+	</body>
+
+</html>

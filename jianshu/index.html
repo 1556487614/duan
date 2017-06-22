@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>简书</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script type="text/javascript">
+			document.getElementsByTagName("html")[0].style.fontSize = innerWidth / 16 + "px";
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				$.getJSON("a.json", function(data) {
+					app.itemList = data.lists;
+					console.log(data.lists)
+				})
+			})
+			var app = new Vue({
+				el: "#app",
+				data: {
+					//声明空数组，进行数据接收，最后传递到前端页面
+					itemList: [],
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="title">
+				<div class="title-box">
+					<img src="img/new-logo.png" />
+					<p>创作你的创作</p>
+					<span><a href="download.html">免费下载</a></span>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="column">
+				<ul>
+					<li>随时随地发现和创作内容</li>
+					<li>每天为你精选好文</li>
+					<li>第一时间收到作者文章更新</li>
+				</ul>
+				<img src="img/index_phone.png" />
+			</div>
+			<div class="menu">
+				<b>热门专题</b>
+			</div>
+			<div class="nav">
+				<div class="subnav">
+					<a href="#">旅行·在路上</a>
+					<a href="#">上班这点事儿</a>
+					<a href="#">短篇小说</a>
+					<a href="#">连载小说</a>
+					<a href="#">@IT·互联网</a>
+					<a href="#">黛玉日报</a>
+					<a href="#">诗</a>
+					<a href="#">谈谈情，说说爱</a>
+				</div>
+			</div>
+			<div class="menu">
+				<b>热门文章</b>
+			</div>
+
+			<ul class="content">
+				<li class="list">
+					<div class="xq">
+						<div class="one">
+							<img src="img/8fc398bd-3af4-4817-b2b1-c5ca08457f50.jpg" />
+							<a href="#">ThoughtWorks中国</a>
+							<span>昨天&nbsp;9：01</span>
+						</div>
+						<div class="two">职场中，我们如何当母亲</div>
+						<div class="three">
+							<img src="img/icon-1.png" />
+							<p>1046</p>
+							<img src="img/icon-2.png" />
+							<p>5</p>
+							<img src="img/icon-3.png" />
+							<p>17</p>
+						</div>
+					</div>
+					<img class="tp" src="img/2267652-5c3a9a443e40d0e8.jpg" />
+				</li>
+			</ul>
+
+
+
+		</section>
+		<!--<div class="block"></div>-->
+		<footer>
+			<div class="loginbar">
+				<a href="loginbar.html">登录</a>
+			</div>
+			<div class="xz">
+				<div class="box">
+					<img src="img/icon-5.png" />
+					<a href="download.html">下载简书，创作你的创作</a>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript">
+			$(function() {
+				$.getJSON("demo.json", function(data) {
+					app.itemList = data.lists;
+					console.log(data.lists)
+				})
+			})
+			var app = new Vue({
+				el: "#app",
+				data: {
+					//声明空数组，进行数据接收，最后传递到前端页面
+					itemList: [],
+				}
+			});
+		</script>
+	</body>
+
+</html>
